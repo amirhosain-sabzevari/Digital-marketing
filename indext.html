@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/public/style/output.css">
+
+</head>
+<body class="bg-white dark:bg-gray-800 dark:text-white">
+    
+
+
+    <header class="">
+
+      <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0">
+          <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="/images/logo-light.svg" class="h-10" alt="Flowbite Logo">
+              <img src="/images/logo-dark.svg" class="h-10 hidden" alt="Flowbite Logo">
+          </a>
+          <div class="flex items-center gap-x-7 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+
+            <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+              <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+              <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            </button>
+
+            <div class="hidden lg:flex items-center gap-x-5">
+              <a href="/public/signin.html" class="">Sign In</a>
+              <a href="/public/signin up.html" class=" bg-colorProject py-4 px-7 rounded-full text-white">Sign Up</a>
+            </div>
+
+            <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+
+          </div>
+          <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <li>
+                <a href="#" class="block text-xl py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+              </li>
+              <li>
+                <a href="#" class="block text-xl py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Features</a>
+              </li>
+              <li>
+                <a href="#" class="block text-xl py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                  
+                <a id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="focus:ring-4 text-xl focus:outline-none focus:ring-blue-300 font-medium px-5 text-center inline-flex items-center hover:text-blue-700 dark:hover:text-blue-700 dark:focus:ring-blue-800" type="button"> Pages <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg>
+                </a>
+                  
+                  <!-- Dropdown menu -->
+                  <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                      <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                        <li>
+                          <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Blog Grid</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Blog Single</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign In</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign Up</a>
+                        </li>
+                        <li>
+                          <a href="/public/404.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">404</a>
+                        </li>
+                      </ul>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block text-xl py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Support</a>
+              </li>
+
+              <!-- link Sign In and Sign Up max 992px  -->
+              <div class="md:hidden my-10">
+                <a href="" class="mr-5">Sign In</a>
+                <a href="" class="bg-colorProject py-4 px-7 rounded-full text-white">Sign Up</a>
+              </div>
+
+            </ul>
+          </div>
+          </div>
+          
+      </nav>
+  
+      <div class="grid grid-cols-1 lg:grid lg:grid-cols-2 lg:items-center">
+
+        <div class="container pt-24">
+          <h1 class="text-3xl font-bold lg:text-5xl lg:font-bold lg:leading-normal">
+            We specialize in UI/UX, Web Development, Digital Marketing.
+          </h1>
+          <p class="text-lg text-gray-500 py-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla magna mauris. Nulla fermentum viverra sem eu rhoncus consequat varius nisi quis, posuere magna.
+          </p>
+
+          <div class="inline-flex gap-y-5 max-lg:flex-col lg:flex lg:items-center">
+            <a href="#" class="mr-7 bg-blue-700 text-white py-4 px-7 rounded-full">Get Started Now</a>
+
+            <span class="flex flex-col">
+              <a href="#" class="inline-block font-bold text-lg"> Call us (0123) 456 – 789 </a>
+              <span class="inline-block text-lg text-gray-500">For any question or concern</span>
+            </span>
+          </div>
+        </div>
+
+
+        <div class="hidden lg:relative lg:flex lg:justify-end xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r">
+          <img src="/images/shape-04.svg" alt="shape" class="h q r">
+          <img src="/images/hero.png" alt="Woman" class="h q r ua absolute top-0 right-0">
+        </div>
+
+      </div>
+
+    </header>
+
+
+
+    <section class="pt-20 lg:pt-40 pb-20">
+      <div class="container grid grid-cols-1 gap-5 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3">
+
+        <div class="flex items-center gap-x-6">
+          <img src="/images/icon-01.svg" alt="" class="bg-red-500 p-6 rounded-full">
+          <div class="flex flex-col">
+            <span class="font-bold text-2xl pb-3">24/7 Support</span>
+            <span class="text-gray-500">Lorem ipsum dolor sit amet conse adipiscing elit.</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-x-6">
+          <img src="/images/icon-02.svg" alt="" class="bg-green-500 p-6 rounded-full">
+          <div class="flex flex-col">
+            <span class="font-bold text-2xl pb-3">24/7 Support</span>
+            <span class="text-gray-500">Lorem ipsum dolor sit amet conse adipiscing elit.</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-x-6">
+          <img src="/images/icon-03.svg" alt="" class="bg-orange-500 p-6 rounded-full">
+          <div class="flex flex-col">
+            <span class="font-bold text-2xl pb-3">24/7 Support</span>
+            <span class="text-gray-500">Lorem ipsum dolor sit amet conse adipiscing elit.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="pb-20">
+      <div class="container grid grid-cols-2 items-center gap-[5rem] max-lg:gap-[2.5rem] max-md:grid max-md:grid-cols-1">
+
+        <div class="grid grid-cols-2 gap-x-7 max-md:hidden">
+          <div class="relative space-y-7">
+            <img src="/images/shape-05.svg" alt="Shape" class="absolute top-5 -left-5">
+            <img src="/images/about-01.png" alt="About" class="max-w-full h-auto">
+            <img src="/images/about-02.png" alt="About" class="max-w-full h-auto">
+          </div>
+
+          <div class="">
+            <img src="/images/shape-06.svg" alt="Shape">
+            <img src="/images/about-03.png" alt="About" class="max-w-full h-auto my-10">
+            <img src="/images/shape-07.svg" alt="Shape" class="">
+          </div>
+        </div>
+
+        <div class="">
+          <span class="text-blue-600 text-xl font-semibold">Why Choose Us</span>
+          <h1 class="text-5xl font-bold pt-5 pb-9 leading-normal max-md:text-2xl max-lg:text-3xl">
+            We Make Our customers happy by giving Best services.
+          </h1>
+          <p class="text-lg text-gray-500 pb-8">
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.
+          </p>
+          <a href="https://www.youtube.com/watch?v=xcJtL7QggTI" data-fslightbox="" class="flex items-center gap-x-6 vc wf hg mb">
+            <span class=" duration-[2000ms] tc wf xf be dd rg i gh ua">
+              <span class="nf h vc yc vd rg gh qk -ud-z-1"></span>
+              <img src="/images/icon-play.svg" alt="Play" class="bg-blue-600 p-3 rounded-full animate-pulse">
+            </span>
+            <span class="text-gray-700 text-lg kk max-sm:text-sm">SEE HOW WE WORK</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <section class="bg-gray-100 relative h-full dark:bg-gray-800">
+
+      <div class="max-w-xl mx-auto pt-32 pb-24 text-center">
+        <h1 class="text-5xl font-bold pb-6 max-md:text-3xl">Meet With Our Creative Dedicated Team</h1>
+        <p class="text-lg text-gray-500">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.
+        </p>
+      </div>
+
+      <img src="/images/shape-08.svg" alt="" class="absolute top-0 right-0"> 
+      <div class="max-lg:hidden">
+        <img src="/images/shape-11.svg" alt="" class="absolute top-28 right-48 animate-bounce duration-1000"> 
+      </div>
+      <img src="/images/shape-10.svg" alt="" class="absolute top-20 left-48 block max-lg:hidden">
+      
+      <div class="container grid grid-cols-3 gap-6 pb-28 max-lg:grid max-lg:grid-cols-2 max-md:grid max-md:grid-cols-1">
+
+        <div class="">
+          <div class="relative group">
+            <img src="/images/team-01.png" alt="" class="w-full h-auto">
+            <div class="bg-blue-600 py-6 absolute bottom-2 w-full opacity-0 group-hover:opacity-100 transition-all duration-700">
+              <ul class="flex items-center justify-center gap-x-4">
+                <li>
+                  <a href="#">
+                    <svg class="h-6 w-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="h-6 w-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 0 0 .497 -3.753C20.18 7.773 21.692 5.25 22 4.009z" /></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="h-6 w-6 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />  <rect x="2" y="9" width="4" height="12" />  <circle cx="4" cy="4" r="2" /></svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-center py-6">
+            <h2 class="text-2xl font-semibold">Olivia Andrium</h2>
+            <span class="text-lg text-gray-600">Product Manager</span>
+          </div>
+          
+
+        </div>
+
+        <div class="">
+          <div class="relative group">
+            <img src="/images/team-02.png" alt="" class="w-full h-auto">
+            <div class="bg-blue-600 py-6 absolute bottom-2 w-full opacity-0 group-hover:opacity-100 transition-all duration-700">
+              <ul class="flex items-center justify-center gap-x-4">
+                <li>
+                  <a href="#">
+                    <svg class="h-6 w-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="h-6 w-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 0 0 .497 -3.753C20.18 7.773 21.692 5.25 22 4.009z" /></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <svg class="h-6 w-6 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />  <rect x="2" y="9" width="4" height="12" />  <circle cx="4" cy="4" r="2" /></svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="text-center py-6">
+            <h2 class="text-2xl font-semibold">Jemse Kemorun</h2>
+            <span class="text-lg text-gray-600">Product Designer</span>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="relative group">
+            <img src="/images/team-03.png" alt="" class="w-full h-auto">
+          <div class="bg-blue-600 py-6 absolute bottom-2 w-full opacity-0 group-hover:opacity-100 transition-all duration-700">
+            <ul class="flex items-center justify-center gap-x-4">
+              <li>
+                <a href="#">
+                  <svg class="h-6 w-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg class="h-6 w-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 0 0 .497 -3.753C20.18 7.773 21.692 5.25 22 4.009z" /></svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg class="h-6 w-6 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />  <rect x="2" y="9" width="4" height="12" />  <circle cx="4" cy="4" r="2" /></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          </div>
+          <div class="text-center py-6">
+            <h2 class="text-2xl font-semibold">Avi Pestarica</h2>
+            <span class="text-lg text-gray-600">Web Designer</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="my-28 container">
+
+      <div class="max-w-xl mx-auto pb-20 text-center">
+        <h1 class="text-5xl font-bold pb-6 max-lg:text-3xl">Meet With Our Creative Dedicated Team</h1>
+        <p class="text-lg text-gray-500">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2 max-lg:grid max-lg:grid-cols-2 max-md:grid max-md:grid-cols-1">
+
+        <div class="space-y-4 p-10 hover:shadow-lg transition-all duration-100">
+          <img src="/images/icon-04.svg" class="mb-10">
+          <h2 class="text-2xl">Crafted for Startups</h2>
+          <p class="text-gray-500 font-semibold">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.
+          </p>
+        </div>
+
+        <div class="space-y-4 p-10 hover:shadow-lg transition-all duration-100">
+          <img src="/images/icon-05.svg" class="mb-10">
+          <h2 class="text-2xl">High-quality Design</h2>
+          <p class="text-gray-500 font-semibold">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.
+          </p>
+        </div>
+
+        <div class="space-y-4 p-10 hover:shadow-lg transition-all duration-100">
+          <img src="/images/icon-06.svg" class="mb-10">
+          <h2 class="text-2xl">All Essential Sections</h2>
+          <p class="text-gray-500 font-semibold">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.
+          </p>
+        </div>
+
+        <div class="space-y-4 p-10 hover:shadow-lg transition-all duration-100">
+          <img src="/images/icon-07.svg" class="mb-10">
+          <h2 class="text-2xl">Speed Optimized</h2>
+          <p class="text-gray-500 font-semibold">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.
+          </p>
+        </div>
+
+        <div class="space-y-4 p-10 hover:shadow-lg transition-all duration-100">
+          <img src="/images/icon-04.svg" class="mb-10">
+          <h2 class="text-2xl">Fully Customizable</h2>
+          <p class="text-gray-500 font-semibold">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.
+          </p>
+        </div>
+
+        <div class="space-y-4 p-10 hover:shadow-lg transition-all duration-100">
+          <img src="/images/icon-06.svg" class="mb-10">
+          <h2 class="text-2xl">Regular Updates</h2>
+          <p class="text-gray-500 font-semibold">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+  
+
+    <section class="bg-gray-100 relative h-full dark:bg-gray-800 pb-20">
+
+      <img src="/images/shape-13.svg" alt="" class="absolute top-0 right-0">
+      <img src="/images/shape-12.svg" alt="" class="absolute bottom-0 left-0">
+      <img src="/images/shape-06.svg" alt="" class="absolute top-14 left-32 inline-block max-lg:hidden">
+      <img src="/images/shape-03.svg" alt="" class="absolute right-56 top-60 inline-block max-lg:hidden">
+
+      <div class="max-w-xl mx-auto pt-32 text-center">
+        <h1 class="text-5xl font-bold pb-6 max-lg:text-3xl">Meet With Our Creative Dedicated Team</h1>
+        <p class="text-lg text-gray-500">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.
+        </p>
+      </div>
+
+      <svg class="absolute top-0 right-0 h-full" xmlns="http://www.w3.org/2000/svg" width"375" height"658">
+        <g fill="none" fill-rule="evenodd" stroke="#D0D5F6" stroke-width="2">
+          <path d="M172.71-101C70.623-79.38 17.478-39.688 13.273 18.074c-6.307 86.643 231.598 17.186 136.358 198-95.241 180.813-181.318 185.29-136.358 298C58.233 626.784 178.96 685.954 319.21 641.2c93.501-29.836 144.652-140.545 153.453-332.126" />
+          <path d="M214.7-101C134.617-82.012 92.926-47.154 89.628 3.575c-4.948 76.093 181.679 15.094 106.966 173.89C121.882 336.262 54.36 340.192 89.628 439.18c35.269 98.986 129.974 150.95 239.995 111.646C402.97 524.622 443.096 427.395 450 259.141" />
+          <path d="M250.935-103c-60.604 16.56-92.153 46.963-94.65 91.208-3.743 66.367 137.488 13.165 80.949 151.664-56.54 138.5-107.638 141.927-80.948 228.261 26.69 86.335 98.359 131.656 181.618 97.376C393.41 442.655 423.775 357.855 429 211.108" />
+        </g>
+      </svg>
+    
+      <div class="flex flex-row justify-center my-10 text-sm tracking-tight font-medium text-gray-700">
+        <p class="mx-3">Bill Monthly</p>
+    
+        <!-- Toggle Button -->
+        <label for="toggle" class="flex items-center cursor-pointer">
+          <!-- toggle -->
+          <div class="relative">
+            <!-- hidden input -->
+            <input id="toggle" type="checkbox" class="hidden" onclick="myFunction()" />
+            <!-- line -->
+            <div class="w-10 h-3 bg-gray-400 rounded-full shadow-inner"></div>
+            <!-- dot -->
+            <div class="toggle_dot absolute w-5 h-5 bg-white rounded-full shadow inset-y-0 left-0"></div>
+          </div>
+        </label>
+    
+        <p class="mx-3">Bill Monthly</p>
+      </div>
+    
+      <div class="container grid grid-cols-3 gap-10 max-lg:grid max-lg:grid-cols-2 max-md:grid max-md:grid-cols-1">
+        <div class="w-full border rounded-lg md:rounded-r-none text-center p-5 mx-auto md:mx-0 my-2 md:my-6 bg-gray-100 font-medium z-10 shadow-lg dark:bg-gray-900">
+          <div class="py-7 text-2xl">Starter</div>
+          <div id="month" class="font-bold text-6xl month hidden">&dollar;29</div>
+          <div id="annual" class="font-bold text-6xl annual">&dollar;149</div>
+          <span class="inline-block py-5 text-gray-500">No credit card required</span>
+          <hr>
+          <div class="text-sm inline-block my-3 text-gray-500">400 GB Storaget</div>
+          <hr>
+          <div class="text-sm inline-block my-3 text-gray-500">Unlimited Photos & Videos</div>
+          <hr>
+          <div class="text-sm inline-block my-3 text-gray-500">Send up to 3 GB</div>
+          <hr>
+          <a href="#" target="_blank">
+            <div class="bg-gradient-base border border-blue-600 hover:bg-white text-white hover:text-blue-600 font-bold uppercase text-xs mt-5 py-2 px-4 rounded cursor-pointer my-7">Learn More</div>
+          </a>
+        </div>
+    
+        <div class="w-full border-transparent rounded-lg text-center p-5 mx-auto md:mx-0 my-2 bg-gradient text-white font-medium z-10 shadow-lg dark:bg-gray-900">
+          <div class="py-7 text-2xl">Growth Plan</div>
+          <div id="month" class="font-bold text-6xl month hidden">&dollar;59</div>
+          <div id="annual" class="font-bold text-6xl annual">&dollar;608</div>
+          <span class="inline-block py-5 text-black">No credit card required</span>
+          <hr class="border border-gray-800 opacity-5">
+          <div class="text-sm inline-block my-3 text-black">400 GB Storaget</div>
+          <hr class="border border-gray-800 opacity-5">
+          <div class="text-sm inline-block my-3 text-black">Unlimited Photos & Videos</div>
+          <hr class="border border-gray-800 opacity-5">
+          <div class="text-sm inline-block my-3 text-black">Send up to 3 GB</div>
+          <hr class="border border-gray-800 opacity-5">
+          <a href="#" target="_blank">
+            <div class="bg-white border border-blue-600 hover:bg-blue-800 text-blue-700 hover:text-white font-bold uppercase text-xs mt-5 py-2 px-4 rounded cursor-pointer my-7">Learn More</div>
+          </a>
+        </div>
+    
+        <div class="w-full border rounded-lg  md:rounded-l-none text-center p-5 mx-auto md:mx-0 my-2 md:my-6 bg-gray-100 font-medium z-10 shadow-lg dark:bg-gray-900">
+          <div class="py-7 text-2xl">Business</div>
+          <div id="month" class="font-bold text-6xl month hidden">&dollar;139</div>
+          <div id="annual" class="font-bold text-6xl annual">&dollar;1568</div>
+          <span class="inline-block py-5 text-gray-500">No credit card required</span>
+          <hr>
+          <div class="text-sm inline-block my-3 text-gray-500">400 GB Storaget</div>
+          <hr>
+          <div class="text-sm inline-block my-3 text-gray-500">Unlimited Photos & Videos</div>
+          <hr>
+          <div class="text-sm inline-block my-3 text-gray-500">Send up to 3 GB</div>
+          <hr>
+          <a href="#" target="_blank">
+            <div class="bg-gradient-base border border-blue-600 hover:bg-white text-white hover:text-blue-600 font-bold uppercase text-xs mt-5 py-2 px-4 rounded cursor-pointer my-7">Learn More</div>
+          </a>
+        </div>
+      </div>
+      
+
+
+
+    </section>
+    
+
+
+    <section>
+
+      <div class="max-w-3xl mx-auto pt-32 text-center">
+        <h1 class="text-5xl font-bold pb-6 max-lg:text-3xl">We Offer Great Affordable Premium Prices.</h1>
+        <p class="text-lg text-gray-500">
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.
+        </p>
+      </div>
+      
+
+      <div class="flex items-center justify-center py-4 md:py-8 flex-wrap">
+        <button type="button" class="text-blue-700 hover:text-white border border-blue-600 bg-white hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:bg-gray-900 dark:focus:ring-blue-800">All categories</button>
+        <button type="button" class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">Shoes</button>
+        <button type="button" class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">Bags</button>
+        <button type="button" class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">Electronics</button>
+        <button type="button" class="text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">Gaming</button>
+      </div>
+      
+
+      <div class="container grid grid-cols-4 gap-4 max-lg:grid max-lg:grid-cols-2 max-md:grid max-md:grid-cols-1">
+        <div class="grid gap-4">
+            <div class="relative group">
+                <img class="h-auto max-w-full rounded-lg" src="/images/project-01.png" alt="">
+                <div class="absolute top-0 w-full h-full bg-white text-center opacity-75 hidden group-hover:block dark:text-gray-900">
+                  <h2 class="pt-7 text-2xl font-semibold">Photo Retouching</h2>
+                  <span class="inline-block py-3">Branded Ecommerce</span>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 bg-blue-600 p-1 rounded-full text-white mx-auto cursor-pointer">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg> 
+                  </a>              
+                </div>
+            </div>
+            <div class="relative group">
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
+                <div class="absolute top-0 w-full h-full bg-white text-center opacity-75 hidden group-hover:block dark:text-gray-900">
+                  <h2 class="pt-7 text-2xl font-semibold">Photo Retouching</h2>
+                  <span class="inline-block py-3">Branded Ecommerce</span>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 bg-blue-600 p-1 rounded-full text-white mx-auto cursor-pointer">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg> 
+                  </a>              
+                </div>
+            </div>
+            <div class="relative group">
+                <img class="h-auto max-w-full rounded-lg" src="/images/project-04.png" alt="">
+                <div class="absolute top-0 w-full h-full bg-white text-center opacity-75 hidden group-hover:block dark:text-gray-900">
+                  <h2 class="pt-7 text-2xl font-semibold">Photo Retouching</h2>
+                  <span class="inline-block py-3">Branded Ecommerce</span>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 bg-blue-600 p-1 rounded-full text-white mx-auto cursor-pointer">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg> 
+                  </a>              
+                </div>
+            </div>
+        </div>
+        <div class="grid gap-4">
+            <div class="relative group">
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
+                <div class="absolute top-0 w-full h-full bg-white text-center opacity-75 hidden group-hover:block dark:text-gray-900">
+                  <h2 class="pt-7 text-2xl font-semibold">Photo Retouching</h2>
+                  <span class="inline-block py-3">Branded Ecommerce</span>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 bg-blue-600 p-1 rounded-full text-white mx-auto cursor-pointer">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg> 
+                  </a>              
+                </div>
+            </div>
+            <div class="relative group">
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
+                <div class="absolute top-0 w-full h-full bg-white text-center opacity-75 hidden group-hover:block dark:text-gray-900">
+                  <h2 class="pt-7 text-2xl font-semibold">Photo Retouching</h2>
+                  <span class="inline-block py-3">Branded Ecommerce</span>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 bg-blue-600 p-1 rounded-full text-white mx-auto cursor-pointer">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg> 
+                  </a>              
+                </div>
+            </div>
+            <div class="relative group">
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="">
+                <div class="absolute top-0 w-full h-full bg-white text-center opacity-75 hidden group-hover:block dark:text-gray-900">
+                  <h2 class="pt-7 text-2xl font-semibold">Photo Retouching</h2>
+                  <span class="inline-block py-3">Branded Ecommerce</span>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 bg-blue-600 p-1 rounded-full text-white mx-auto cursor-pointer">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg> 
+                  </a>              
+                </div>
+            </div>
+        </div>
+        <div class="grid gap-4">
+            <div class="relative group">
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
+                <div class="absolute top-0 w-full h-full bg-white text-center opacity-75 hidden group-hover:block dark:text-gray-900">
+                  <h2 class="pt-7 text-2xl font-semibold">Photo Retouching</h2>
+                  <span class="inline-block py-3">Branded Ecommerce</span>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 bg-blue-600 p-1 rounded-full text-white mx-auto cursor-pointer">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg> 
+                  </a>              
+                </div>
+            </div>
+            <div class="relative group">
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="">
+                <div class="absolute top-0 w-full h-full bg-white text-center opacity-75 hidden group-hover:block dark:text-gray-900">
+                  <h2 class="pt-7 text-2xl font-semibold">Photo Retouching</h2>
+                  <span class="inline-block py-3">Branded Ecommerce</span>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 bg-blue-600 p-1 rounded-full text-white mx-auto cursor-pointer">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg> 
+                  </a>              
+                </div>
+            </div>
+            <div class="relative group">
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
+                <div class="absolute top-0 w-full h-full bg-white text-center opacity-75 hidden group-hover:block dark:text-gray-900">
+                  <h2 class="pt-7 text-2xl font-semibold">Photo Retouching</h2>
+                  <span class="inline-block py-3">Branded Ecommerce</span>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 bg-blue-600 p-1 rounded-full text-white mx-auto cursor-pointer">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg> 
+                  </a>              
+                </div>
+            </div>
+        </div>
+        <div class="grid gap-4">
+            <div class="relative group">
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
+                <div class="absolute top-0 w-full h-full bg-white text-center opacity-75 hidden group-hover:block dark:text-gray-900">
+                  <h2 class="pt-7 text-2xl font-semibold">Photo Retouching</h2>
+                  <span class="inline-block py-3">Branded Ecommerce</span>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 bg-blue-600 p-1 rounded-full text-white mx-auto cursor-pointer">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg> 
+                  </a>              
+                </div>
+            </div>
+            <div class="relative group">
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
+                <div class="absolute top-0 w-full h-full bg-white text-center opacity-75 hidden group-hover:block dark:text-gray-900">
+                  <h2 class="pt-7 text-2xl font-semibold">Photo Retouching</h2>
+                  <span class="inline-block py-3">Branded Ecommerce</span>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 bg-blue-600 p-1 rounded-full text-white mx-auto cursor-pointer">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg> 
+                  </a>              
+                </div>
+            </div>
+            <div class="relative group">
+                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
+                <div class="absolute top-0 w-full h-full bg-white text-center opacity-75 hidden group-hover:block dark:text-gray-900">
+                  <h2 class="pt-7 text-2xl font-semibold">Photo Retouching</h2>
+                  <span class="inline-block py-3">Branded Ecommerce</span>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 bg-blue-600 p-1 rounded-full text-white mx-auto cursor-pointer">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg> 
+                  </a>              
+                </div>
+            </div>
+        </div>
+      </div>
+
+    </section>
+
+
+
+    <section class="relative">
+
+      <div class="max-w-3xl mx-auto pt-32 text-center">
+        <h1 class="text-5xl font-bold pb-6 max-lg:text-3xl">Client’s Testimonials</h1>
+        <p class="text-lg text-gray-500">
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.
+        </p>
+      </div>
+      
+      
+      <main class="z-0 relative min-h-screen flex flex-col justify-center overflow-hidden">
+        <div class="w-full max-w-5xl mx-auto px-4 md:px-6 py-24">
+
+            <!-- Card slider -->
+            <section class="px-12">
+                <div class="max-w-lg mx-auto relative">
+    
+                    <input id="article-01" type="radio" name="slider" class="sr-only peer/01">
+                    <input id="article-02" type="radio" name="slider" class="sr-only peer/02">
+                    <input id="article-03" type="radio" name="slider" class="sr-only peer/03" checked>
+                    <input id="article-04" type="radio" name="slider" class="sr-only peer/04">
+                    <input id="article-05" type="radio" name="slider" class="sr-only peer/05">
+    
+                    <div class="
+                        absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+                        peer-focus-visible/01:[&_article]:ring
+                        peer-focus-visible/01:[&_article]:ring-indigo-300
+                        peer-checked/01:relative
+                        peer-checked/01:z-50
+                        peer-checked/01:translate-x-0
+                        peer-checked/01:scale-100
+                        peer-checked/01:[&>label]:pointer-events-none
+                        peer-checked/02:-translate-x-20
+                        peer-checked/02:scale-[83.75%]
+                        peer-checked/02:z-40
+                        peer-checked/03:-translate-x-40
+                        peer-checked/03:z-30
+                        peer-checked/04:-translate-x-40                    
+                        peer-checked/04:opacity-0
+                        peer-checked/05:-translate-x-40
+                    ">
+                        <label class="absolute inset-0" for="article-01"><span class="sr-only">Focus on the big picture</span></label>
+                        <article class="bg-white p-6 rounded-lg shadow-2xl">
+                            <header class="mb-2">
+                                <img class="inline-flex rounded-md shadow mb-3 max-w-full h-auto" src="/images/testimonial.png" alt="Icon" />
+                                <img src="/images/icon-quote.svg" alt="" class="">
+                            </header>
+                            <div class="text-sm leading-relaxed text-slate-500 space-y-4 mb-2">
+                                <p class="">       
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor diam, feugiat quis enim sed, ullamcorper semper ligula. Mauris consequat justo volutpat.
+                                </p>
+                            </div>
+                            <footer class="mt-5 flex items-center justify-between max-sm:flex max-sm:flex-col max-sm:items-start max-sm:gap-y-3">
+                                <div class="flex flex-col">
+                                  <span class="">Devid Smith</span>
+                                  <span class="text-gray-600 max-sm:text-sm">Founter @democompany</span>
+                                </div>
+                                <img src="/images/brand-light-02.svg" alt="" class="">
+                            </footer>
+                        </article>
+                    </div>
+    
+                    <div class="
+                        absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+                        peer-focus-visible/02:[&_article]:ring
+                        peer-focus-visible/02:[&_article]:ring-indigo-300                        
+                        peer-checked/01:translate-x-20
+                        peer-checked/01:scale-[83.75%]
+                        peer-checked/01:z-40
+                        peer-checked/02:relative
+                        peer-checked/02:z-50
+                        peer-checked/02:translate-x-0
+                        peer-checked/02:scale-100
+                        peer-checked/02:[&>label]:pointer-events-none
+                        peer-checked/03:-translate-x-20
+                        peer-checked/03:scale-[83.75%]
+                        peer-checked/03:z-40
+                        peer-checked/04:-translate-x-40
+                        peer-checked/04:z-30
+                        peer-checked/05:-translate-x-40 
+                        peer-checked/05:opacity-0
+                    ">
+                        <label class="absolute inset-0" for="article-02"><span class="sr-only">Focus on the big picture</span></label>
+                        <article class="bg-white p-6 rounded-lg shadow-2xl">
+                          <header class="mb-2">
+                              <img class="inline-flex rounded-md shadow mb-3 max-w-full h-auto" src="/images/team-01.png" alt="Icon" />
+                              <img src="/images/icon-quote.svg" alt="" class="">
+                          </header>
+                          <div class="text-sm leading-relaxed text-slate-500 space-y-4 mb-2">
+                              <p class="">       
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor diam, feugiat quis enim sed, ullamcorper semper ligula. Mauris consequat justo volutpat.
+                              </p>
+                          </div>
+                          <footer class="mt-5 flex items-center justify-between max-sm:flex max-sm:flex-col max-sm:items-start max-sm:gap-y-3">
+                              <div class="flex flex-col">
+                                <span class="">Devid Smith</span>
+                                <span class="text-gray-600 max-sm:text-sm">Founter @democompany</span>
+                              </div>
+                              <img src="/images/brand-light-02.svg" alt="" class="">
+                          </footer>
+                        </article>
+                    </div>
+    
+                    <div class="
+                        absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+                        peer-focus-visible/03:[&_article]:ring
+                        peer-focus-visible/03:[&_article]:ring-indigo-300                          
+                        peer-checked/01:translate-x-40
+                        peer-checked/01:z-30
+                        peer-checked/02:translate-x-20
+                        peer-checked/02:scale-[83.75%]
+                        peer-checked/02:z-40
+                        peer-checked/03:relative
+                        peer-checked/03:z-50
+                        peer-checked/03:translate-x-0
+                        peer-checked/03:scale-100
+                        peer-checked/03:[&>label]:pointer-events-none
+                        peer-checked/04:-translate-x-20
+                        peer-checked/04:scale-[83.75%]
+                        peer-checked/04:z-40
+                        peer-checked/05:-translate-x-40
+                        peer-checked/05:z-30                  
+                    ">
+                        <label class="absolute inset-0" for="article-03"><span class="sr-only">Focus on the big picture</span></label>
+                        <article class="bg-white p-6 rounded-lg shadow-2xl">
+                          <header class="mb-2">
+                              <img class="inline-flex rounded-md shadow mb-3 max-w-full h-auto" src="/images/team-02.png" alt="Icon" />
+                              <img src="/images/icon-quote.svg" alt="" class="">
+                          </header>
+                          <div class="text-sm leading-relaxed text-slate-500 space-y-4 mb-2">
+                              <p class="">       
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor diam, feugiat quis enim sed, ullamcorper semper ligula. Mauris consequat justo volutpat.
+                              </p>
+                          </div>
+                          <footer class="mt-5 flex items-center justify-between max-sm:flex max-sm:flex-col max-sm:items-start max-sm:gap-y-3">
+                              <div class="flex flex-col">
+                                <span class="">Devid Smith</span>
+                                <span class="text-gray-600 max-sm:text-sm">Founter @democompany</span>
+                              </div>
+                              <img src="/images/brand-light-02.svg" alt="" class="">
+                          </footer>
+                        </article>
+                    </div>
+    
+                    <div class="
+                        absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+                        peer-focus-visible/04:[&_article]:ring
+                        peer-focus-visible/04:[&_article]:ring-indigo-300                          
+    
+                        peer-checked/01:translate-x-40 
+                        peer-checked/01:opacity-0
+                        
+                        peer-checked/02:translate-x-40
+                        peer-checked/02:z-30
+                        
+                        peer-checked/03:translate-x-20
+                        peer-checked/03:scale-[83.75%]
+                        peer-checked/03:z-40
+    
+                        peer-checked/04:relative
+                        peer-checked/04:z-50
+                        peer-checked/04:translate-x-0
+                        peer-checked/04:scale-100
+                        peer-checked/04:[&>label]:pointer-events-none
+                        
+                        peer-checked/05:-translate-x-20
+                        peer-checked/05:scale-[83.75%]
+                        peer-checked/05:z-40
+                    ">
+                        <label class="absolute inset-0" for="article-04"><span class="sr-only">Focus on the big picture</span></label>
+                        <article class="bg-white p-6 rounded-lg shadow-2xl">
+                          <header class="mb-2">
+                              <img class="inline-flex rounded-md shadow mb-3 max-w-full h-auto" src="/images/team-03.png" alt="Icon" />
+                              <img src="/images/icon-quote.svg" alt="" class="">
+                          </header>
+                          <div class="text-sm leading-relaxed text-slate-500 space-y-4 mb-2">
+                              <p class="">       
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor diam, feugiat quis enim sed, ullamcorper semper ligula. Mauris consequat justo volutpat.
+                              </p>
+                          </div>
+                          <footer class="mt-5 flex items-center justify-between max-sm:flex max-sm:flex-col max-sm:items-start max-sm:gap-y-3">
+                              <div class="flex flex-col">
+                                <span class="">Devid Smith</span>
+                                <span class="text-gray-600 max-sm:text-sm">Founter @democompany</span>
+                              </div>
+                              <img src="/images/brand-light-02.svg" alt="" class="">
+                          </footer>
+                        </article>
+                    </div>  
+                    
+                    <div class="
+                        absolute inset-0 scale-[67.5%] z-20 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
+                        peer-focus-visible/05:[&_article]:ring
+                        peer-focus-visible/05:[&_article]:ring-indigo-300                          
+                        peer-checked/01:translate-x-40 
+                        peer-checked/02:translate-x-40 
+                        peer-checked/02:opacity-0
+                        peer-checked/03:translate-x-40
+                        peer-checked/03:z-30
+                        peer-checked/04:translate-x-20
+                        peer-checked/04:scale-[83.75%]
+                        peer-checked/04:z-40
+                        peer-checked/05:relative
+                        peer-checked/05:z-50
+                        peer-checked/05:translate-x-0
+                        peer-checked/05:scale-100
+                        peer-checked/05:[&>label]:pointer-events-none
+                    ">
+                        <label class="absolute inset-0" for="article-05"><span class="sr-only">Focus on the big picture</span></label>
+                        <article class="bg-white p-6 rounded-lg shadow-2xl">
+                          <header class="mb-2">
+                              <img class="inline-flex rounded-md shadow mb-3 max-w-full h-auto" src="/images/team-2.jpg" alt="Icon" />
+                              <img src="/images/icon-quote.svg" alt="" class="">
+                          </header>
+                          <div class="text-sm leading-relaxed text-slate-500 space-y-4 mb-2">
+                              <p class="">       
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor diam, feugiat quis enim sed, ullamcorper semper ligula. Mauris consequat justo volutpat.
+                              </p>
+                          </div>
+                          <footer class="mt-5 flex items-center justify-between max-sm:flex max-sm:flex-col max-sm:items-start max-sm:gap-y-3">
+                              <div class="flex flex-col">
+                                <span class="">Devid Smith</span>
+                                <span class="text-gray-600 max-sm:text-sm">Founter @democompany</span>
+                              </div>
+                              <img src="/images/brand-light-02.svg" alt="" class="">
+                          </footer>
+                        </article>
+                    </div>                  
+                </div>
+            </section>
+            <!-- End: Card slider -->
+
+        </div>
+    </main>
+
+    </section>
+
+  
+
+    <section class="bg-gray-100 py-28 my-24 relative dark:bg-gray-900">
+
+
+      <img src="/images/shape-11.svg" alt="" class="absolute bottom-8 left-10 w-16 h-16 animate-bounce">
+      <img src="/images/shape-14.svg" alt="" class="absolute top-0 left-1/3">
+      <img src="/images/shape-07.svg" alt="" class="absolute top-0 right-10 rotate-90 w-24 h-24">
+
+      <div class="container grid grid-cols-4 text-center gap-16 max-md:grid max-md:grid-cols-2">
+
+
+        <div class=""> 
+          <h2 class="text-5xl font-bold pb-3">785</h2>
+          <span class="text-xl text-gray-600">Global Brands</span>
+        </div>
+
+        <div class="">
+          <h2 class="text-5xl font-bold pb-3">533</h2>
+          <span class="text-xl text-gray-600">Happy Clients</span>
+        </div>
+
+        <div class="">
+          <h2 class="text-5xl font-bold pb-3">865</h2>
+          <span class="text-xl text-gray-600">Winning Award</span>
+        </div>
+
+        <div class="">
+          <h2 class="text-5xl font-bold pb-3">346</h2>
+          <span class="text-xl text-gray-600">Happy Clients</span>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <section class="border-b-2 container">
+
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h1 class="text-5xl font-bold pb-6 max-lg:text-3xl">Trusted by Global Brands</h1>
+        <p class="text-lg text-gray-500">
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-6 mb-24 gap-12 max-md:grid max-md:grid-cols-3"> 
+        
+        <div class="">
+          <img src="/images/brand-light-01.svg" alt="" class="">
+        </div>
+
+        <div class="">
+          <img src="/images/brand-light-02.svg" alt="" class="">
+        </div>
+
+        <div class="">
+          <img src="/images/brand-light-03.svg" alt="" class="">
+        </div>
+
+        <div class="">
+          <img src="/images/brand-light-04.svg" alt="" class="">
+        </div>
+
+        <div class="">
+          <img src="/images/brand-light-05.svg" alt="" class="">
+        </div>
+
+        <div class="">
+          <img src="/images/brand-light-06.svg" alt="" class="">
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="mb-24">
+
+      <div class="max-w-3xl mx-auto text-center my-28">
+        <h1 class="text-5xl font-bold pb-6 max-lg:text-3xl">Latest Blogs & News</h1>
+        <p class="text-lg text-gray-500">
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.
+        </p>
+      </div>
+
+
+      <div class="container grid grid-cols-3 gap-10 max-lg:grid max-lg:grid-cols-2 max-md:grid max-md:grid-cols-1">
+
+        <div class="shadow-md relative group">
+          <img src="/images/blog-03.png" alt="" class="group-hover:opacity-40 transition-all duration-500">
+          
+          <div class="hidden group-hover:block transition-all duration-500">
+            <a href="/public/blog-single.html" class="bg-blue-700 text-white py-4 px-7 rounded-full hover:bg-blue-800 absolute top-24 left-24">Read More</a>
+          </div>
+
+          <div class="p-6">
+            <div class="flex gap-x-5">
+              <span class="flex gap-x-2 text-gray-700 text-lg">
+                <img src="/images/icon-man.svg" alt="" class="">
+                Musharof Chy
+              </span>
+              <span class="flex gap-x-2 text-gray-700 text-lg">
+                <img src="/images/icon-calender.svg" alt="" class="">
+                25 Dec, 2025
+              </span>
+            </div>
+            <h2 class="text-2xl mt-3 hover:text-blue-700">
+              <a href="/public/blog-single.html" class="">Tips to quickly improve your coding speed.</a>
+            </h2>
+          </div>
+        </div>
+
+
+        <div class="shadow-md relative group">
+          <img src="/images/blog-03.png" alt="" class="group-hover:opacity-40 transition-all duration-500">
+          
+          <div class="hidden group-hover:block transition-all duration-500">
+            <a href="/public/blog-single.html" class="bg-blue-700 text-white py-4 px-7 rounded-full hover:bg-blue-800 absolute top-24 left-24">Read More</a>
+          </div>
+
+          <div class="p-6">
+            <div class="flex gap-x-5">
+              <span class="flex gap-x-2 text-gray-700 text-lg">
+                <img src="/images/icon-man.svg" alt="" class="">
+                Musharof Chy
+              </span>
+              <span class="flex gap-x-2 text-gray-700 text-lg">
+                <img src="/images/icon-calender.svg" alt="" class="">
+                25 Dec, 2025
+              </span>
+            </div>
+            <h2 class="text-2xl mt-3 hover:text-blue-700">
+              <a href="/public/blog-single.html" class="">Tips to quickly improve your coding speed.</a>
+            </h2>
+          </div>
+        </div>
+
+        <div class="shadow-md relative group">
+          <img src="/images/blog-03.png" alt="" class="group-hover:opacity-40 transition-all duration-500">
+          
+          <div class="hidden group-hover:block transition-all duration-500">
+            <a href="/public/blog-single.html" class="bg-blue-700 text-white py-4 px-7 rounded-full hover:bg-blue-800 absolute top-24 left-24">Read More</a>
+          </div>
+
+          <div class="p-6">
+            <div class="flex gap-x-5">
+              <span class="flex gap-x-2 text-gray-700 text-lg">
+                <img src="/images/icon-man.svg" alt="" class="">
+                Musharof Chy
+              </span>
+              <span class="flex gap-x-2 text-gray-700 text-lg">
+                <img src="/images/icon-calender.svg" alt="" class="">
+                25 Dec, 2025
+              </span>
+            </div>
+            <h2 class="text-2xl mt-3 hover:text-blue-700">
+              <a href="/public/blog-single.html" class="">Tips to quickly improve your coding speed.</a>
+            </h2>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="bg-gray-100 relative h-full py-28 dark:bg-gray-800">
+
+      <img src="/images/shape-06.svg" alt="" class="absolute top-10 left-44 max-lg:hidden">
+      <img src="/images/shape-13.svg" alt="" class="absolute top-0 right-0">
+      <img src="/images/shape-03.svg" alt="" class="absolute top-56 right-40 max-lg:hidden">
+      <img src="/images/shape-12.svg" alt="" class="absolute bottom-0 left-0">
+
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-5xl font-bold pb-6 max-lg:text-3xl">Let’s Stay Connected</h1>
+        <p class="text-lg text-gray-500">
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.
+        </p>
+      </div>
+
+      <div class="container flex gap-10 grid-cols-2 max-lg:grid max-lg:grid-cols-1 mt-16">
+
+        <div class="shadow-2xl rounded-xl w-[30%] max-lg:w-full relative p-12 flex flex-col gap-y-9">
+          <img src="/images/shape-03.svg" alt="" class="w-8 h-8 absolute top-5 right-5">
+          <img src="/images/shape-06.svg" alt="" class="w-14 h-14 rotate-180 absolute bottom-5 right-5 max-lg:hidden">
+
+          <div class="">
+            <h2 class="text-2xl pb-2 max-sm:text-sm">Email Address</h2>
+            <a href="#" class="text-gray-500">support@startup.com</a>
+          </div>
+
+          <div class="">
+            <h2 class="text-2xl pb-2 max-sm:text-sm">Office Location</h2>
+            <a href="#" class="text-gray-500">76/A, Green valle, Califonia USA.</a>
+          </div>
+
+          <div class="">
+            <h2 class="text-2xl pb-2 max-sm:text-sm">Phone Number</h2>
+            <a href="#" class="text-gray-500">+009 8754 3433 223</a>
+          </div>
+
+          <div class="">
+            <h2 class="text-2xl pb-2 max-sm:text-sm">Skype Email</h2>
+            <a href="#" class="text-gray-500">example@yourmail.com</a>
+          </div>
+
+          <hr>
+
+          <h2 class="text-2xl max-sm:text-sm">Social Media</h2>
+          <div class="flex gap-x-5 max-lg:gap-x-0">
+            <a href="" class="block hover:bg-blue-700 rounded-full hover:text-white p-2 group">
+              <svg class="h-6 w-6 max-md:h-4 max-md:w-4 text-gray-700 group-hover:text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+            </a>
+            <a href="" class="block hover:bg-blue-700 rounded-full hover:text-white p-2 group">
+              <svg class="h-6 w-6 max-md:h-4 max-md:w-4 text-gray-700 group-hover:text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 0 0 .497 -3.753C20.18 7.773 21.692 5.25 22 4.009z" /></svg>
+            </a>
+            <a href="" class="block hover:bg-blue-700 rounded-full hover:text-white p-2 group">
+              <svg class="h-6 w-6 max-md:h-4 max-md:w-4 text-gray-700 group-hover:text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />  <rect x="2" y="9" width="4" height="12" />  <circle cx="4" cy="4" r="2" /></svg>
+            </a>
+            <a href="" class="block hover:bg-blue-700 rounded-full hover:text-white p-2 group">
+              <svg class="h-6 w-6 max-md:h-4 max-md:w-4 text-gray-700 group-hover:text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M3 16v-5.5a2.5 2.5 0 0 1 5 0v5.5m0 -4h-5" />  <path d="M12 6v12" />  <path d="M16 16v-8h3a2 2 0 0 1 0 4h-3m3 0a2 2 0 0 1 0 4h-3" /></svg>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="w-[70%] max-lg:w-full shadow-md p-12 rounded-xl">                             
+
+              <form class="max-w-md mx-auto flex flex-col gap-y-10">
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_email" class="peer-focus:font-medium absolute text-xl text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
+                </div>
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="password" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_password" class="peer-focus:font-medium absolute text-xl text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+                </div>
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="password" name="repeat_password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-xl text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
+                </div>
+                <div class="grid md:grid-cols-2 md:gap-6">
+                  <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                      <label for="floating_first_name" class="peer-focus:font-medium absolute text-xl text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
+                  </div>
+                  <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                      <label for="floating_last_name" class="peer-focus:font-medium absolute text-xl text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
+                  </div>
+                  <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                    <label for="floating_last_name" class="peer-focus:font-medium absolute text-xl text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Message</label>
+                  </div>
+                </div>
+                <!-- <div class="grid md:grid-cols-2 md:gap-6">
+                  <div class="relative z-0 w-full mb-5 group">
+                      <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                      <label for="floating_phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone number (123-456-7890)</label>
+                  </div>
+                  <div class="relative z-0 w-full mb-5 group">
+                      <input type="text" name="floating_company" id="floating_company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                      <label for="floating_company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Company (Ex. Google)</label>
+                  </div>
+                </div> -->
+                <div class="flex justify-center items-center">
+                  <button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Send Message</button>
+                </div>
+              </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="bg-blue-600 relative mb-28">
+
+      <img src="/images/shape-16.svg" alt="" class="absolute bottom-0 right-0">
+
+      <div class="container flex justify-between items-center py-32 max-lg:flex max-lg:flex-col">
+        
+        <div class="max-w-2xl">
+          <h1 class="text-white text-5xl pb-4 max-sm:text-3xl">Join with 5000+ Startups Growing with Base.</h1>
+          <p class="text-white">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis nibh lorem. Duis sed odio lorem. In a efficitur leo. Ut venenatis rhoncus.
+          </p>
+        </div>
+
+        <div class="max-lg:mt-10">
+          <a href="" class="bg-white py-4 px-7 rounded-full dark:text-black">Get Started Now</a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <footer>
+      <div class="container">
+
+        <div class="grid grid-cols-1 gap-10 pb-32">
+
+          <div class="">
+            <img src="/images/logo-light.svg" alt="" class="">
+            <p class="text-gl py-5 font-semibold">
+              Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit.
+            </p>
+            <div class="flex gap-x-5 max-lg:gap-x-0">
+              <a href="" class="block rounded-full p-2 group">
+                <svg class="h-5 w-5 max-md:h-4 max-md:w-4 text-gray-700 hover:text-blue-700"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+              </a>
+              <a href="" class="block rounded-full p-2 group">
+                <svg class="h-5 w-5 max-md:h-4 max-md:w-4 text-gray-700 hover:text-blue-700"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 0 0 .497 -3.753C20.18 7.773 21.692 5.25 22 4.009z" /></svg>
+              </a>
+              <a href="" class="block rounded-full p-2 group">
+                <svg class="h-5 w-5 max-md:h-4 max-md:w-4 text-gray-700 hover:text-blue-700"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />  <rect x="2" y="9" width="4" height="12" />  <circle cx="4" cy="4" r="2" /></svg>
+              </a>
+              <a href="" class="block rounded-full p-2 group">
+                <svg class="h-5 w-5 max-md:h-4 max-md:w-4 text-gray-700 hover:text-blue-700"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M3 16v-5.5a2.5 2.5 0 0 1 5 0v5.5m0 -4h-5" />  <path d="M12 6v12" />  <path d="M16 16v-8h3a2 2 0 0 1 0 4h-3m3 0a2 2 0 0 1 0 4h-3" /></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-10 max-md:grid max-md:grid-cols-1">
+
+            <div class="flex flex-col gap-y-9">
+              <h2 class="text-2xl font-semibold">Quick Links</h2>
+              <ul class="flex flex-col gap-y-3">
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Home</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Product</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Careers</a>
+                  <a href="" class="bg-green-400 py-1 px-3 text-white rounded-full ml-2 text-sm">Hiring</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Pricing</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-col gap-y-9">
+              <h2 class="text-2xl font-semibold">Services</h2>
+              <ul class="flex flex-col gap-y-3">
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Web Development</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Graphics Design</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Digital Marketing</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Ui/Ux Design</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-col gap-y-9">
+              <h2 class="text-2xl font-semibold">Support</h2>
+              <ul class="flex flex-col gap-y-3">
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Company</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Press media</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Our Blog</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-col gap-y-9">
+              <h2 class="text-2xl font-semibold">Newsletter</h2>
+              <p class="">
+                Subscribe to receive future updates
+              </p>      
+              <form class="max-w-sm">
+                <div class="relative">
+                  <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                      <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"/>
+                      <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
+                    </svg>
+                  </div>
+                  <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com">
+                </div>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="border-t flex justify-between items-center py-8 max-md:flex-col max-md:gap-y-4">
+          <ul class="flex gap-x-8">
+            <li><a href="" class="text-gray-600 hover:text-blue-700">English</a></li>
+            <li><a href="" class="text-gray-600 hover:text-blue-700">Privacy Policy</a></li>
+            <li><a href="" class="text-gray-600 hover:text-blue-700">Support</a></li>
+          </ul>
+          <span class="">© 2025 Base. All rights reserved</span>
+        </div>
+
+      </div>
+    </footer>
+
+
+
+
+    <!-- fils javascript -->
+
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.0.2/glide.js"></script>
+    <script src="/public/script.js"></script>
+
+</body>
+</html>
