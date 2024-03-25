@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "scripts": {
+    "build": "npx tailwindcss -i ./css/style.css -o ./public/style/output.css --watch"
+  },
+  "dependencies": {
+    "@preline/toggle-count": "^2.0.2",
+    "flowbite": "^2.3.0"
+  }
+}

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog-single</title>
+
+    <link rel="stylesheet" href="/public/style/output.css">
+
+</head>
+<body class="dark:bg-gray-900">
+    
+    <nav class="bg-white dark:bg-gray-900 dark:text-white fixed w-full z-20 top-0 start-0">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/images/logo-light.svg" class="h-10" alt="Flowbite Logo">
+            <img src="/images/logo-dark.svg" class="h-10 hidden" alt="Flowbite Logo">
+        </a>
+        <div class="flex items-center gap-x-7 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+
+          <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+
+          <div class="hidden lg:flex items-center gap-x-5">
+            <a href="/public/signin.html" class="">Sign In</a>
+            <a href="/public/signin up.html" class=" bg-colorProject py-4 px-7 rounded-full text-white">Sign Up</a>
+          </div>
+
+          <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+          <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <li>
+              <a href="/public/indext.html" class="block text-xl py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+            </li>
+            <li>
+              <a href="#" class="block text-xl py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Features</a>
+            </li>
+            <li>
+              <a href="#" class="block text-xl py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                
+              <a id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="focus:ring-4 text-xl focus:outline-none focus:ring-blue-300 font-medium px-5 text-center inline-flex items-center hover:text-blue-700 dark:hover:text-blue-700 dark:focus:ring-blue-800" type="button"> Pages <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+              </a>
+                
+                <!-- Dropdown menu -->
+                <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Blog Grid</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Blog Single</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign In</a>
+                      </li>
+                      <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign Up</a>
+                      </li>
+                      <li>
+                        <a href="/public/404.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">404</a>
+                      </li>
+                    </ul>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="block text-xl py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Support</a>
+            </li>
+
+            <!-- link Sign In and Sign Up max 992px  -->
+            <div class="md:hidden my-10">
+              <a href="" class="mr-5">Sign In</a>
+              <a href="" class="bg-colorProject py-4 px-7 rounded-full text-white">Sign Up</a>
+            </div>
+
+          </ul>
+        </div>
+        </div>
+        
+    </nav>
+
+
+    <section class="mt-44 pb-32 dark:text-white dark:bg-gray-900">
+      <div class="container flex gap-14 max-lg:grid max-lg:grid-cols-1">
+
+        <div class="w-[70%] max-lg:w-full">
+          <img src="/images/blog-big.png" alt="" class="">
+          <h1 class="text-3xl font-semibold py-8">Kobe Steel plant that supplied</h1>
+          <ul class="flex gap-x-6 text-lg text-gray-600">
+            <li><span>Author:</span></li>
+            <li><span>Published On:</span></li>
+            <li><span>Category:</span></li>
+          </ul>
+          <ul class="flex gap-x-6 text-lg text-gray-600">
+            <li><span>Devid Cleriya</span></li>
+            <li><span>April 16, 2025</span></li>
+            <li><span>Events</span></li>
+          </ul>
+          <p class="text-gray-500 py-10 text-lg">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis nibh lorem. Duis sed odio lorem. In a efficitur leo. Ut venenatis rhoncus quam sed condimentum. Curabitur vel turpis in dolor volutpat imperdiet in ut mi. Integer non volutpat nulla. Nunc elementum elit viverra, tempus quam non, interdum ipsum.
+          </p>
+          <p class="text-gray-500 pb-10 text-lg">
+            Aenean augue ex, condimentum vel metus vitae, aliquam porta elit. Quisque non metus ac orci mollis posuere. Mauris vel ipsum a diam interdum ultricies sed vitae neque. Nulla porttitor quam vitae pulvinar placerat. Nulla fringilla elit sit amet justo feugiat sodales. Morbi eleifend, enim non eleifend laoreet, odio libero lobortis lectus, non porttitor sem urna sit amet metus. In sollicitudin quam est, pellentesque consectetur felis fermentum vitae.
+          </p>
+          <div class="flex gap-8 w-full">
+            <img src="/images/blog-04.png" alt="" class="h-auto w-1/2">
+            <img src="/images/blog-05.png" alt="" class="h-auto w-1/2">
+          </div>
+          <h1 class="text-3xl font-semibold py-10">The powerful force of humanity</h1>
+          <p class="text-gray-600 text-lg pb-10">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis nibh lorem. Duis sed odio lorem. In a efficitur leo. Ut venenatis rhoncus quam sed condimentum. Curabitur vel turpis in dolor volutpat imperdiet in ut mi. Integer non volutpat nulla. Nunc elementum elit viverra, tempus quam non, interdum ipsum.
+          </p>
+          <ul class="flex gap-3">
+            <li><span class="inline-block text-lg pr-5">Share On:</span></li>
+            <li>
+              <a href="" class="">
+                <button
+  type="button"
+  data-twe-ripple-init
+  data-twe-ripple-color="light"
+  class="mb-2 inline-block rounded bg-[#1877f2] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
+  <span class="[&>svg]:h-4 [&>svg]:w-4">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 320 512">
+      <path
+        d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
+    </svg>
+  </span>
+                </button>
+              </a>
+            </li>
+            <a href="" class="">
+              <button
+  type="button"
+  data-twe-ripple-init
+  data-twe-ripple-color="light"
+  class="mb-2 inline-block rounded bg-[#333] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
+  <span class="[&>svg]:h-4 [&>svg]:w-4">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 496 512">
+      <path
+        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+    </svg>
+  </span>
+              </button>
+            </a>
+            <a href="" class="">
+              <button
+  type="button"
+  data-twe-ripple-init
+  data-twe-ripple-color="light"
+  class="mb-2 inline-block rounded bg-[#0077b5] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
+  <span class="[&>svg]:h-4 [&>svg]:w-4">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 448 512">
+      <path
+        d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
+    </svg>
+  </span>
+              </button>
+            </a>
+            <a href="" class="">
+              <button
+  type="button"
+  data-twe-ripple-init
+  data-twe-ripple-color="light"
+  class="mb-2 inline-block rounded bg-[#e60023] px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
+  <span class="[&>svg]:h-4 [&>svg]:w-4">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 496 512">
+      <path
+        d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3 .8-3.4 5-20.3 6.9-28.1 .6-2.5 .3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z" />
+    </svg>
+  </span>
+              </button>
+            </a>
+          </ul>
+        </div>
+
+        <div class="w-[30%] max-lg:w-full">
+          <form action="/search" class="max-w-[480px] w-full px-4">
+                <div class="relative">
+                    <input type="text" name="q" class="w-full border h-12 shadow p-4 rounded-full" placeholder="search">
+                    <button type="submit">
+                        <svg class="text-teal-400 h-5 w-5 absolute top-3.5 right-3 fill-current"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            x="0px" y="0px" viewBox="0 0 56.966 56.966"
+                            style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve">
+                            <path
+                                d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z">
+                            </path>
+                        </svg>
+                </button>
+                </div>
+          </form>
+          <h2 class="text-2xl font-semibold py-4">Categories</h2>
+          <ul class="flex flex-col gap-y-3">
+            <li><a href="" class="text-gray-500 text-lg">Blog</a></li>
+            <li><a href="" class="text-gray-500 text-lg">Events</a></li>
+            <li><a href="" class="text-gray-500 text-lg">Grids</a></li>
+            <li><a href="" class="text-gray-500 text-lg">News</a></li>
+            <li><a href="" class="text-gray-500 text-lg">Rounded</a></li>
+          </ul>
+          <h2 class="text-2xl font-semibold py-7">Related Posts</h2>
+          <div class="flex flex-col gap-y-5">
+            <div class="flex gap-x-7">
+              <img src="/images/blog-small-01.png" alt="" class="">
+              <a href="" class="text-2xl hover:text-blue-700">Free advertising for your online business</a>
+            </div>
+            <div class="flex gap-x-5">
+              <img src="/images/blog-small-02.png" alt="" class="">
+              <a href="" class="text-2xl hover:text-blue-700">9 simple ways to improve your design skills</a>
+            </div>
+            <div class="flex gap-x-5">
+              <img src="/images/blog-small-03.png" alt="" class="">
+              <a href="" class="text-2xl hover:text-blue-700">Tips to quickly improve your coding speed.</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="bg-blue-600 relative mb-28">
+
+      <img src="/images/shape-16.svg" alt="" class="absolute bottom-0 right-0">
+
+      <div class="container flex justify-between items-center py-32 max-lg:flex max-lg:flex-col">
+        
+        <div class="max-w-2xl">
+          <h1 class="text-white text-5xl pb-4 max-sm:text-3xl">Join with 5000+ Startups Growing with Base.</h1>
+          <p class="text-white">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis nibh lorem. Duis sed odio lorem. In a efficitur leo. Ut venenatis rhoncus.
+          </p>
+        </div>
+
+        <div class="max-lg:mt-10">
+          <a href="" class="bg-white py-4 px-7 rounded-full dark:text-black">Get Started Now</a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <footer class="dark:bg-gray-900 dark:text-white">
+      <div class="container">
+
+        <div class="grid grid-cols-1 gap-10 pb-32">
+
+          <div class="">
+            <img src="/images/logo-light.svg" alt="" class="">
+            <p class="text-gl py-5 font-semibold">
+              Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit.
+            </p>
+            <div class="flex gap-x-5 max-lg:gap-x-0">
+              <a href="" class="block rounded-full p-2 group">
+                <svg class="h-5 w-5 max-md:h-4 max-md:w-4 text-gray-700 hover:text-blue-700"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+              </a>
+              <a href="" class="block rounded-full p-2 group">
+                <svg class="h-5 w-5 max-md:h-4 max-md:w-4 text-gray-700 hover:text-blue-700"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 0 0 .497 -3.753C20.18 7.773 21.692 5.25 22 4.009z" /></svg>
+              </a>
+              <a href="" class="block rounded-full p-2 group">
+                <svg class="h-5 w-5 max-md:h-4 max-md:w-4 text-gray-700 hover:text-blue-700"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />  <rect x="2" y="9" width="4" height="12" />  <circle cx="4" cy="4" r="2" /></svg>
+              </a>
+              <a href="" class="block rounded-full p-2 group">
+                <svg class="h-5 w-5 max-md:h-4 max-md:w-4 text-gray-700 hover:text-blue-700"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M3 16v-5.5a2.5 2.5 0 0 1 5 0v5.5m0 -4h-5" />  <path d="M12 6v12" />  <path d="M16 16v-8h3a2 2 0 0 1 0 4h-3m3 0a2 2 0 0 1 0 4h-3" /></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-4 gap-10 max-md:grid max-md:grid-cols-1">
+
+            <div class="flex flex-col gap-y-9">
+              <h2 class="text-2xl font-semibold">Quick Links</h2>
+              <ul class="flex flex-col gap-y-3">
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Home</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Product</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Careers</a>
+                  <a href="" class="bg-green-400 py-1 px-3 text-white rounded-full ml-2 text-sm">Hiring</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Pricing</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-col gap-y-9">
+              <h2 class="text-2xl font-semibold">Services</h2>
+              <ul class="flex flex-col gap-y-3">
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Web Development</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Graphics Design</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Digital Marketing</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Ui/Ux Design</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-col gap-y-9">
+              <h2 class="text-2xl font-semibold">Support</h2>
+              <ul class="flex flex-col gap-y-3">
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Company</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Press media</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Our Blog</a>
+                </li>
+                <li>
+                  <a href="" class="text-md text-gray-600 hover:text-blue-700">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-col gap-y-9">
+              <h2 class="text-2xl font-semibold">Newsletter</h2>
+              <p class="">
+                Subscribe to receive future updates
+              </p>      
+              <form class="max-w-sm">
+                <div class="relative">
+                  <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                      <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"/>
+                      <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
+                    </svg>
+                  </div>
+                  <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com">
+                </div>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="border-t flex justify-between items-center py-8 max-md:flex-col max-md:gap-y-4">
+          <ul class="flex gap-x-8">
+            <li><a href="" class="text-gray-600 hover:text-blue-700">English</a></li>
+            <li><a href="" class="text-gray-600 hover:text-blue-700">Privacy Policy</a></li>
+            <li><a href="" class="text-gray-600 hover:text-blue-700">Support</a></li>
+          </ul>
+          <span class="">© 2025 Base. All rights reserved</span>
+        </div>
+
+      </div>
+    </footer>
+
+
+    <!-- fils javascript -->
+
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.0.2/glide.js"></script>
+    <script src="/public/script.js"></script>
+
+</body>
+</html>
